@@ -47,7 +47,8 @@
         <timestamp>${maven.build.timestamp}</timestamp>
 
         <hazelcast.distribution>Hazelcast</hazelcast.distribution>
-        <hazelcast.serialization.version>1</hazelcast.serialization.version>
+	<hazelcast.serialization.version>1</hazelcast.serialization.version>
+	<hazelcast.aws.version>1.1.1</hazelcast.aws.version>
 
         <!-- Not using 3.1 at the moment since it recompiles all classes every time -->
         <!-- https://jira.codehaus.org/browse/MCOMPILER-205 -->
@@ -973,6 +974,11 @@
     </repositories>
 
     <dependencies>
+	<dependency>
+	    <groupId>com.hazelcast</groupId>
+	    <artifactId>hazelcast-aws</artifactId>
+	    <version>${hazelcast.aws.version}</version>
+	</dependency>
         <dependency>
             <groupId>javax.cache</groupId>
             <artifactId>cache-api</artifactId>
